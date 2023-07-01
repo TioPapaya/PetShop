@@ -1,0 +1,60 @@
+{% extends 'administrador/base.html'%}
+{% load static %}
+
+{% block title %} inicio de administrador {% endblock %}
+
+{% block contenido %}
+
+<link rel="stylesheet" href="{% static  'administrador/css/style_admin.css' %}">
+
+<table class="table table-striped table-info">
+    <thead>
+    <tr>
+        <th scope="col">Nombre de fundaciones </th>
+        <th scope="col">Nro Telefono     </th>
+        <th scope="col">Correo           </th>
+        <th scope="col">direcion         </th>
+        <th scope="col">opciones         </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in fundaciones %}
+    <tr>
+        <td>{{ p.nombre_fundacion }}</td>
+        <td>{{ p.nro_telefono }}</td>
+        <td>{{ p.corre}}</td>
+        <td>{{ p.direcion }}</td>
+        <td><button class="red-button"> <a href="{% url 'refugiodel' pk=p.nombre_fundacion %}">eliminar</a> </button></td>
+        <td><button class="green-button"> <a href="{% url 'refugioedit' pk=p.nombre_fundacion %}">editar</a> </button></td>
+    
+    </tr>
+    {%  endfor %}
+    </tbody>
+</table>
+
+<table class="table table-striped table-info">
+    <thead>
+    <tr>
+        <th scope="col">Nombre del producto </th>
+        <th scope="col">precio              </th>
+        <th scope="col">imagen              </th>
+        <th scope="col">opciones         </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for p in tiendas %}
+    <tr>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.precio }}</td>
+        {% if p.imagen%}
+            <td>{{ p.imagen.url}}</td>
+        {% endif %}
+        <td><button class="red-button"> <a href="{% url 'productodel' pk=p.nombre %}">eliminar</a> </button></td>
+        <td><button class="green-button"> <a href="{% url 'productoedit' pk=p.nombre %}">editar</a> </button></td>
+
+    </tr>
+    {%  endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

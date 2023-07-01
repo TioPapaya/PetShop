@@ -1,0 +1,23 @@
+{% extends 'administrador/base.html'%}
+{% load static %}
+
+{% block title %} formulario de tienda {% endblock %}
+
+{% block contenido %}
+
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Agregar Tienda</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
