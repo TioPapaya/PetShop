@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'Petshop/css/style.css' %}">
+    
+    <link rel="Website Icon" type="png" href="{% static 'PetShop/img/img/icono-pagina.png'%}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body class="bg-dark img-fluid">
+
+    <section class="centra box">
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="ul">
+                <li class="li"><a class="a" href="{% url 'inicio' %}">inicio</a></li>
+                <li class="li"><a class="a" href="{% url 'tienda' %}">tienda</a></li>
+                <li class="li"><a class="a" href="{% url 'nosotros' %}">nosotros</a></li>
+                <li class="li"><a class="a" href="{% url 'contacto' %}">contacto</a></li>
+                <li class="li"><a class="a" href="{% url 'adopcion' %}">adopcion</a></li>
+                <li class="li"><a class="a" href="{% url 'poner_adopcion' %}">poner en adopcion</a></li>
+                <li class="li">
+                <a class="a dropdown" data-toggle="dropdown" aria-expanded="false" style=" cursor: pointer;">
+                    {% if user.is_authenticated %}
+                        {{ user.username }}
+                    {% else %}
+                        <a class="a" href="{% url 'login' %}">PetShop</a>
+                    {% endif %}
+                </a>                    
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'logout' %}">cerrar sesion</a>
+                </div>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    {% block contenido %}
+
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+    <footer>
+        <p>Derechos reservados © 2023 Tienda en línea</p>
+        <p> Contacto: via whatsapp +56 9 8364 3743</p>
+        <p> Correo: correo.ejemplo@gmail.com</p>
+    </footer>
+</body>
+</html>

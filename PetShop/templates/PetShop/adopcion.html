@@ -1,0 +1,36 @@
+{% extends 'PetShop/base.html'%}
+{% load static %}
+
+{% block title %} Adopcion {% endblock %}
+
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'PetShop/css/style_adopcion.css' %}">
+
+<section> 
+    <div class="wrapper ">
+    {% for p in mascotas %}
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                {% if p.imagen%}
+                <img class="img-fluid" src="{{ p.imagen.url }}" alt="pug">
+                {% endif %}
+            </div>
+            <div class="flip-card-black">
+                <h5>Raza: {{ p.raza | capfirst }}</h5>
+                <h5>Genero: {{ p.id_genero | capfirst}}</h5>
+                <h5>Peso {{ p.peso }} KG</h5>
+                <h5>esterilizado: {% if p.esterilizado %}Sí{% else %}No{% endif %}</h5>
+                <h5>Vacunas: {% if p.vacunas %}Sí{% else %}No{% endif %}</h5>
+                <h5>Color: {{ p.color | capfirst }}</h5>
+                <h5>Edad: {{ p.edad }} Años App</h5>
+                <h1>{{ p.nombre | capfirst}}</h1>
+                <button class="neon-btn3"> <a href="{% url 'mascotaDel' pk=p.nombre %}">Adoptar</a> </button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

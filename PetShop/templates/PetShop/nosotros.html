@@ -1,0 +1,45 @@
+{% extends 'PetShop/base.html'%}
+{% load static%}
+
+{% block title %} Nosotros {% endblock %}
+
+{% block contenido %}
+<link rel="stylesheet" href="{% static 'PetShop/css/style_nosotros.css' %}">
+
+<section class="letras2">
+  <main class="contenedor">
+    <h1 class="nosotros__contenido titulo">pet shop</h1>
+
+    <div class="nosotros">
+        <div class="nosotros__contenido ">
+            <p>¡Bienvenidos a "Pet Shop", la tienda de mascotas más grandiosa de la ciudad! Estamos encantados de ofrecerte una amplia variedad de productos para satisfacer las necesidades y los deseos de tu amigo peludo.</p>
+            <p>En nuestra tienda, encontrarás una amplia gama de juguetes interactivos, desde pelotas y cuerdas hasta rompecabezas y juguetes de estimulación mental. Estos juguetes no solo brindarán diversión a tu mascota, sino que también ayudarán a mantener su mente activa y en forma.</p>
+            <p>Además de los juguetes, contamos con una gran selección de camas y casas para que tu mascota pueda descansar cómodamente. Desde camas suaves y acolchadas hasta casitas con diseños únicos, nos aseguraremos de que tu amigo de cuatro patas tenga un lugar acogedor y tranquilo para relajarse.</p>
+            <p>Si quieres que tu mascota se destaque con un estilo único, también ofrecemos una variedad de accesorios como collares, correas, arneses y ropa. Desde diseños elegantes hasta divertidos atuendos temáticos, podrás encontrar algo que se adapte al estilo y la personalidad de tu mascota.</p>
+            <p>Además de los productos, en "Pet Shop" contamos con un equipo de expertos en mascotas que estarán encantados de brindarte asesoramiento y recomendaciones personalizadas para el cuidado de tu amigo peludo. Estamos comprometidos en ayudarte a proporcionarle una vida feliz y saludable a tu mascota.</p>
+            <p>Tu apoyo y preferencia nos ayudarán a convertirnos en la mejor tienda de mascotas del mercado, permitiéndonos ofrecerte cada vez más productos y servicios de alta calidad. Así que no dudes en visitarnos y hacer que tu mascota sea la envidia del vecindario. ¡Te esperamos en "Pet Shop"!</p>
+        </div>
+        <img class="bajar rounded mx-auto d-block img-thumbnail img img-fluid" src="{% static 'PetShop/img/img/tienda_1.jpg' %}" alt="tienda pet shop">
+        <img class="rounded mx-auto d-block img-thumbnail img img-fluid" src="{% static 'PetShop/img/img/accesorios-perro.webp' %}" alt="perro en una cama">
+  <section class="contenedor comprar">
+    <h2 class="comprar__titulo centra">¿Por qué comprar nuestros productos?</h2>
+    <div class="bloques">
+        <div class="bloque">
+        </div> 
+        <div class="bloque">
+            <img class="bloque__imagen rounded mx-auto d-block img-thumbnail img img-fluid" src="{% static 'PetShop/img/img/icono_3.png' %}" alt="porque comprar">
+            <h5 class="bloque__titulo">Envío Gratis</h5>
+            <p>Todos nuestros productos tiene incluido el despacho</p>
+        </div> <!--.bloque-->
+
+        <div class="bloque">
+            <img class="bloque__imagen rounded mx-auto d-block img-thumbnail img img-fluid" src="{% static 'PetShop/img/img/icono_4.png'%}" alt="porque comprar">
+            <h5 class="bloque__titulo">Garantia Por Un Año</h5>
+            <p>Todos nuestros productos tienen incluida una Garantia</p>
+        </div> <!--.bloque-->
+        
+        </div>
+    </div><!--.bloques-->
+  </section>
+</section>
+{% endblock %}

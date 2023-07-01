@@ -1,0 +1,41 @@
+.adopcion-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.adopcion-form .form-group {
+    margin-bottom: 15px;
+}
+
+.adopcion-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.adopcion-form input[type="text"],
+.adopcion-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+.adopcion-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.adopcion-form button:hover {
+    background-color: #45a049;
+}
+
